@@ -1,0 +1,46 @@
+<h2 mat-dialog-title class="title">
+  <mat-icon>email</mat-icon>
+  <div>{{title}}</div>
+</h2>
+<div mat-dialog-content>
+  <div class="content">
+    <form
+      [formGroup]="emailTemplateForm"
+      (ngSubmit)="onSubmit()"
+      #emailTemplateLineForm="ngForm"
+    >
+      <div class="field">
+        <mat-form-field class="form-field-name">
+          <mat-label>Navn på skabelon</mat-label>
+          <input matInput required formControlName="name" />
+          <mat-error *ngIf="emailTemplateForm.get('name').invalid"
+            >Feltet skal udfyldes</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="field">
+        <mat-form-field class="form-field-name">
+          <mat-label>Beskrivelse af skabelon</mat-label>
+          <input matInput required formControlName="description" />
+          <mat-error *ngIf="emailTemplateForm.get('description').invalid"
+            >Feltet skal udfyldes</mat-error
+          >
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+</div>
+<div mat-dialog-actions class="button-container">
+  <button type="button" mat-raised-button (click)="closeDialog()">
+    Luk
+  </button>
+  <button
+    mat-raised-button
+    color="primary"
+    type="button"
+    (click)="submitForm()"
+    [disabled]="!emailTemplateForm.valid"
+  >
+    {{buttonTitle}}
+  </button>
+</div>

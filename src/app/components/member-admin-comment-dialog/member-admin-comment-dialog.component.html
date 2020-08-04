@@ -1,0 +1,49 @@
+<h2 mat-dialog-title class="title">
+  <mat-icon>comment</mat-icon> <span>Aministrator kommentar</span>
+</h2>
+<div mat-dialog-content>
+  <div class="comment-edit">
+    <mat-form-field>
+      <mat-label>Skriv en kommentar</mat-label>
+      <textarea rows="3" matInput [(ngModel)]="commentText"></textarea>
+    </mat-form-field>
+    <div class="comment-edit-buttons">
+      <button mat-icon-button color="primary" (click)="addComment()" matTooltip="Gem" [@saveButtonAnim]="showClearComment"><mat-icon>send</mat-icon></button>
+      <button class="clear-button" mat-icon-button color="primary" (click)="clearComment()" matTooltip="Ryd" [@clearButtonAnim]="showClearComment"><mat-icon>clear</mat-icon></button>
+    </div>
+  </div>
+  <div role="list" class="comment-list" >
+    <mat-card class="comment" *ngFor="let comment of adminComments; index as i">
+      <div class="user">
+        <span>{{comment.updatedAt.toDate() | amLocal | amDateFormat:'DD-MM-YYYY HH:mm'}}</span> - <span>{{getAdminUserName(comment.userId)}}</span>
+        <button mat-icon-button (click)="showEditDeleteMenu(i)"><mat-icon>more_vert</mat-icon></button>
+        <div class="popupMenu mat-elevation-z8" [@editDeleteAnim]="animStates[i].editDelete">
+          <button mat-icon-button (click)="editCommentSet(comment, i)" color="primary" matTooltip="Rediger kommentaren">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button (click)="deleteCommentConfirm(i)" color="primary" matTooltip="Slet kommentaren">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+        <div class="popupMenu mat-elevation-z8" [@deleteAnim]="animStates[i].delete">
+          <button mat-icon-button color="primary" (click)="deleteComment(comment, i)" matTooltip="Slet"><mat-icon>check_circle</mat-icon></button>
+          <button mat-icon-button color="primary" (click)="deleteComment(null, i)" matTooltip="Fortyd"><mat-icon>cancel</mat-icon></button>
+        </div>
+      </div>
+      <div class="text">
+        {{comment.comment}}
+      </div>
+      <div class="delete-buttons">
+
+      </div>
+    </mat-card>
+  </div>
+</div>
+<div mat-dialog-actions class="button-container">
+  <button
+    mat-raised-button
+    [mat-dialog-close]="true"
+  >
+    Luk
+  </button>
+</div>

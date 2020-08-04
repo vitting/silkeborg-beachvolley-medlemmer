@@ -1,0 +1,31 @@
+.title {
+  display: flex;
+  align-items: center;
+
+  .mat-icon {
+    margin-right: 5px;
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+.payment_title {
+  margin: 3px 0;
+  font-weight: 300;
+}
+
+.payment-text {
+  background-color: darkred;
+  color: white;
+  padding: 1px 2px;
+  border-radius: 4px;
+  display: inline-block;
+}

@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="top-buttons">
+    <button mat-icon-button matToolbar="Opret ny bruger" (click)="addUser()">
+      <mat-icon>person_add</mat-icon>
+    </button>
+  </div>
+  <div class="list">
+    <mat-card
+      role="listitem"
+      class="listitem"
+      *ngFor="let adminUser of adminUsers; index as i"
+    >
+      <mat-card-header>
+        <mat-card-title>
+          <div class="info">
+            <div class="name">{{adminUser.name}}</div>
+            <div class="email">{{adminUser.email}}</div>
+          </div>
+        </mat-card-title>
+        <mat-card-subtitle>
+          <div class="properties">
+            <div class="date">
+              <mat-icon>access_time</mat-icon
+              ><span
+                >{{adminUser.createdAt.toDate() | amLocal | amDateFormat:
+                'DD-MM-YYYY HH:mm'}}</span
+              >
+            </div>
+            <div class="admin-user" *ngIf="adminUser.admin">
+              <mat-icon>gavel</mat-icon><span>Administrator</span>
+            </div>
+          </div>
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions>
+        <div class="button-container">
+          <button
+            mat-icon-button
+            matTooltip="Rediger"
+            (click)="editUser(adminUser)"
+            color="primary"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            matTooltip="Slet"
+            (click)="deleteUser(adminUser, i)"
+            color="primary"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,104 @@
+@import "../../../colors";
+
+.title {
+  display: flex;
+  align-items: center;
+
+  .mat-icon {
+    margin-right: 5px;
+  }
+}
+
+.template-name {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  .mat-icon {
+    font-size: 1.2em;
+    margin-right: 5px;
+  }
+}
+
+.member-info {
+  margin-bottom: 20px;
+
+  .member-info-name, .member-info-email {
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+
+    .mat-icon {
+      font-size: 1.2em;
+      margin-right: 5px;
+    }
+  }
+}
+
+.email-form {
+  position: relative;
+}
+
+.show-vars-button-container {
+  position: absolute;
+  z-index: 1000;
+  top: -20px;
+  right: -20px;
+}
+
+.variables-popup {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.92;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.4);
+  button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+}
+
+.variables {
+  width: 100%;
+  background-color: $indigo-900;
+  color: white;
+  font-size: 1em;
+  padding: 10px;
+  border-radius: 4px;
+  .var-title {
+    font-weight: 500;
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }
+
+  .var-lines {
+    .var {
+      font-weight: 500;
+    }
+  }
+}
+
+.actions-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.editor-field {
+  margin: 20px 0;
+  position: relative;
+}

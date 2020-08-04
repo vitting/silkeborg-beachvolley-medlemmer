@@ -1,0 +1,40 @@
+button {
+  margin: 10px 0;
+}
+.environment_functions {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  .dev-vars-container,
+  .prod-vars-container {
+    padding: 10px;
+    background-color: lightgray;
+    border-radius: 4px;
+  }
+
+  h2 {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+  .env-dev-warning {
+    padding: 10px;
+    background-color: #c51414;
+    color: white;
+    border-radius: 8px;
+    font-weight: 500;
+
+    .env-dev-warning-email {
+      font-weight: bold;
+    }
+  }
+
+  .env-line {
+    padding: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    .env-title {
+      font-weight: 500;
+    }
+  }
+}

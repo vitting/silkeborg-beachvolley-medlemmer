@@ -1,0 +1,58 @@
+<mat-toolbar color="primary" id="topbar">
+  <div class="loggedout" *ngIf="!user">
+    <button mat-button [routerLink]="'login'">Gå til login</button>
+  </div>
+  <div class="loggedin" *ngIf="user">
+    <div class="loggin-left">
+      <button mat-icon-button [matMenuTriggerFor]="mainmenu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div class="logo" *ngIf="title">
+        <img src="assets/images/sbv_logo_250x250.png" alt="logo" />
+        <span class="loggedin-title">{{title}}</span>
+      </div>
+    </div>
+    <button mat-button [matMenuTriggerFor]="usermenu">
+      <span class="loggedin-user-name">{{user.displayName}}</span>
+      <img
+        class="profileimage"
+        [src]="imageSrc"
+        alt="profil billede"
+        *ngIf="imageSrc"
+        (error)="imageError()"
+      />
+    </button>
+  </div>
+</mat-toolbar>
+<app-progressbar></app-progressbar>
+
+<!-- Menu definitions -->
+<mat-menu #mainmenu="matMenu">
+  <button mat-menu-item [routerLink]="['/admin/medlemmer']" >
+    <mat-icon>wc</mat-icon>
+    <span>Medlemmer</span>
+  </button>
+  <button mat-menu-item [routerLink]="['/admin/indstillinger']" >
+    <mat-icon>settings</mat-icon>
+    <span>Indstillinger</span>
+  </button>
+  <button mat-menu-item [routerLink]="['/admin/brugere']" *ngIf="isAdmin" >
+    <mat-icon>group</mat-icon>
+    <span>Brugere</span>
+  </button>
+  <button mat-menu-item [routerLink]="['/admin/log']" *ngIf="isAdmin" >
+    <mat-icon>view_headline</mat-icon>
+    <span>Log</span>
+  </button>
+  <button mat-menu-item [routerLink]="['/admin/emaillog']" *ngIf="isAdmin" >
+    <mat-icon>email</mat-icon>
+    <span>Log E-mails</span>
+  </button>
+</mat-menu>
+
+<mat-menu #usermenu="matMenu">
+  <button mat-menu-item (click)="logout()">
+    <mat-icon>account_circle</mat-icon>
+    <span>Log ud</span>
+  </button>
+</mat-menu>

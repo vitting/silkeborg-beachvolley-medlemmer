@@ -1,0 +1,4 @@
+fejl meddelse ved fejl i component funktioner
+
+Når man logger så tjek om settings er udfyldt og ellers punke brugeren om at udfylde
+  Der skal være udfyldt kontingent for current Year

@@ -1,0 +1,40 @@
+<h2 mat-dialog-title class="title">
+  <mat-icon>payment</mat-icon> <span>Medlems kontingent</span>
+</h2>
+<div mat-dialog-content>
+  <div class="content">
+    <div class="name">{{member.name}}</div>
+    <div>
+      <div class="payment_title">Betaling for sæson</div>
+      <mat-selection-list (selectionChange)="changePayment($event)">
+        <mat-list-option
+          *ngFor="let payment of payments"
+          [selected]="payment.paied"
+          [value]="payment"
+        >
+          <div matLine>
+            <span>{{payment.year}}</span> -
+            <span
+              [ngClass]="{'payment-text': !getPaymentExitsts(payment.year)}"
+              [matTooltip]="getPaymentExitsts(payment.year) ? '' : 'Kontingent eksistere ikke'"
+              >{{getPayment(payment.year)}} kr.</span
+            >
+          </div>
+        </mat-list-option>
+        <mat-list-item *ngIf="!nextYearExists">
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="addNextPayment()"
+            [disabled]="nextYearExists"
+          >
+            Tilføj sæson {{nextYear}}
+          </button>
+        </mat-list-item>
+      </mat-selection-list>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions class="button-container">
+  <button mat-raised-button (click)="closeDialog()" cdkFocusInitial>Luk</button>
+</div>

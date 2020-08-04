@@ -1,0 +1,75 @@
+<h2 mat-dialog-title class="title">
+  <mat-icon>person</mat-icon> <span>Medlems info</span>
+</h2>
+<div mat-dialog-content>
+  <div class="line"><span class="label">Navn:</span> {{data.name}}</div>
+  <div class="line">
+    <span class="label">Oprettet:</span> {{data.createdAt.toDate() | amLocal |
+    amDateFormat:'D. MMMM YYYY [kl.] hh:mm'}}
+  </div>
+  <div class="line"><span class="label">Medlems Id:</span> {{data.id}}</div>
+  <div class="line">
+    <span class="label">Adresse:</span>
+    <div>
+      <div>{{data.address}}</div>
+      <div>{{zipcodeCity}}</div>
+    </div>
+  </div>
+  <div class="line">
+    <span class="label">Fødsels dato:</span> {{data.birthDate.toDate() | amLocal
+    | amDateFormat:'D. MMMM YYYY'}} ({{age}} år)
+  </div>
+  <div class="line no-vert-padding">
+    <span class="label">E-mail:</span>
+    <div>
+      {{data.email}}
+      <button
+        mat-icon-button
+        [cdkCopyToClipboard]="data.email"
+        (cdkCopyToClipboardCopied)="copiedToClipboard($event, 'Email')"
+      >
+        <mat-icon>content_copy</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="line no-vert-padding">
+    <span class="label">Mobil:</span>
+    <div>
+      {{data.phone}}
+      <button
+        mat-icon-button
+        [cdkCopyToClipboard]="data.phone"
+        (cdkCopyToClipboardCopied)="copiedToClipboard($event, 'Mobil')"
+      >
+        <mat-icon>content_copy</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="line">
+    <span class="label">Hold:</span>
+    <div>{{teamName}}</div>
+  </div>
+  <div class="line" *ngIf="data.comment">
+    <span class="label">Kommentar:</span><br />
+    <div>
+      {{data.comment}}
+    </div>
+  </div>
+  <div class="line" *ngIf="payments">
+    <span class="label">Kontingent:</span>
+    <div class="paid">
+      <span
+        *ngFor="let payment of payments"
+        class="paid-element"
+        [ngClass]="{'member-paid': payment.paied, 'member-not-paid': !payment.paied}"
+        ><mat-icon class="paid-element-icon" *ngIf="!payment.paied"
+          >thumb_down</mat-icon
+        ><mat-icon class="paid-element-icon" *ngIf="payment.paied">thumb_up</mat-icon
+        ><span class="paid-element-text">{{payment.year}}</span></span
+      >
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions class="button-container">
+  <button mat-raised-button (click)="closeDialog()" cdkFocusInitial>Luk</button>
+</div>

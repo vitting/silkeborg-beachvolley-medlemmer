@@ -1,0 +1,62 @@
+<h2 mat-dialog-title class="title">
+  <mat-icon>playlist_add_check</mat-icon> <span>Vælg medlemmer</span>
+</h2>
+<div>
+  <mat-form-field class="members-filter">
+    <mat-label>Brug filter</mat-label>
+    <mat-select
+      [value]="filterSelectValue"
+      (selectionChange)="filterChange($event)"
+    >
+      <mat-option *ngFor="let option of options" [value]="option.value">
+        {{option.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div class="selected-count-container">
+  <div>
+    <span>Antal valgte medlemmer:</span>
+    <span class="selected-count">{{selectedCount}}</span>
+  </div>
+  <div>
+    <button
+      matTooltip="Kopier valgte medlemmers e-mail adresser som en streng"
+      mat-icon-button
+      [cdkCopyToClipboard]="getSelectedMembersAsString()"
+      (cdkCopyToClipboardCopied)="copiedToClipboard($event)"
+    >
+      <mat-icon>content_copy</mat-icon>
+    </button>
+  </div>
+</div>
+<div mat-dialog-content>
+  <div class="content">
+    <mat-selection-list
+      #memberlist
+      (selectionChange)="changeMemberSelection($event)"
+    >
+      <mat-list-option
+        *ngFor="let option of memberOptions"
+        [value]="option"
+        [selected]="option.selected"
+      >
+        <div matLine>{{option.member.name}}</div>
+        <div matLine>{{option.member.email}}</div>
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+</div>
+<div mat-dialog-actions class="button-container">
+  <button mat-raised-button [mat-dialog-close]="false" cdkFocusInitial>
+    Fortryd
+  </button>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="saveSelected()"
+    [disabled]="!selectedCount"
+  >
+    Vælg
+  </button>
+</div>

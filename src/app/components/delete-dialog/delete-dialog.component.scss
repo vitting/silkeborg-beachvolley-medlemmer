@@ -1,0 +1,18 @@
+.title {
+  display: flex;
+  align-items: center;
+
+  .mat-icon {
+    margin-right: 5px;
+  }
+}
+
+.text {
+  display: inline-block;
+  padding: 10px 0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
+}

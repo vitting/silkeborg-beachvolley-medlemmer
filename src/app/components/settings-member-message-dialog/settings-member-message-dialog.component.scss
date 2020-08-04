@@ -1,0 +1,15 @@
+.title {
+  display: flex;
+  align-items: center;
+
+
+  .mat-icon {
+    margin-right: 5px;
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}

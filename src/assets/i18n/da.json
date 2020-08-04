@@ -1,0 +1,29 @@
+{
+  "MEMBERSHIP_FORM": {
+    "TITLE": "Indmeldelse i",
+    "TEAM_LABEL": "Hold",
+    "TEAM_PLACEHOLDER": "Vælg dit hold",
+    "NAME_LABEL": "Navn",
+    "NAME_PLACEHOLDER": "Indtast dit navn",
+    "ADDRESS_LABEL": "Adresse",
+    "ADDRESS_PLACEHOLDER": "Indtast din adresse",
+    "ZIPCODE_LABEL": "Postnr",
+    "ZIPCODE_PLACEHOLDER": "Indtast dit postnummer",
+    "DATEOFBIRTH_TITLE": "Fødselsdato",
+    "DAY_LABEL": "Dag",
+    "MONTH_LABEL": "Måned",
+    "YEAR_LABEL": "År",
+    "EMAIL_PLACEHOLDER": "Indtast din E-mail adresse",
+    "MOBILE_LABEL": "Mobil",
+    "MOBILE_PLACEHOLDER": "Indtast dit mobilnummer",
+    "COMMENT_LABEL": "Kommentar",
+    "COMMENT_PLACEHOLDER": "Skriv en kommentar",
+    "SUBMITBUTTON_TEXT": "Send"
+  },
+  "MEMBERSHIP_ERRORS": {
+    "REQUIRED_ERROR": "Skal udfyldes",
+    "ZIPCODE_ERROR": "Ikke et gyldigt postnummer",
+    "MOBILE_ERROR": "Ikke et gyldigt mobilnummer",
+    "EMAIL_ERROR": "Ikke en gyldig e-mail adresse"
+  }
+}

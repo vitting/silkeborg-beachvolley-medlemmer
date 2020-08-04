@@ -1,0 +1,44 @@
+<button color="primary" mat-button (click)="addEditPayment(null)" class="payment-add">
+  <mat-icon>add</mat-icon> Tilføj et kontingents år
+</button>
+<div class="payment-lines" role="list">
+  <div
+    class="payment-line"
+    *ngFor="let paymentLine of paymentLines; index as i"
+    role="listitem"
+  >
+    <div class="payment-line-buttons">
+      <button
+        mat-icon-button
+        matTooltip="Rediger"
+        class="payment-edit"
+        (click)="addEditPayment(paymentLine, i)"
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        matTooltip="Slet"
+        class="payment-delete"
+        (click)="deletePayment(paymentLine, i)"
+        [disabled]="getIsDefaultTeam(paymentLine)"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+    <div class="payment-fields">
+      <div class="payment-field payment-field-team">
+        <div class="payment-field-title">Hold</div>
+        <div>{{getTeamName(paymentLine.teamId)}}</div>
+      </div>
+      <div class="payment-field">
+        <div class="payment-field-title">År</div>
+        <div>{{paymentLine.year}}</div>
+      </div>
+      <div class="payment-field">
+        <div class="payment-field-title">Beløb</div>
+        <div>{{paymentLine.amount}} kr.</div>
+      </div>
+    </div>
+  </div>
+</div>

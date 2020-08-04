@@ -1,0 +1,66 @@
+.title {
+  display: flex;
+  align-items: center;
+
+  .mat-icon {
+    margin-right: 5px;
+  }
+}
+
+.line {
+  border-bottom: 1px solid lightgray;
+  padding: 10px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &.no-vert-padding {
+    padding: 0 5px;
+  }
+
+  .paid {
+    display: flex;
+    .paid-element {
+      color: white;
+      padding: 5px;
+      border-radius: 4px;
+      margin-right: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .paid-element-icon {
+        margin-right: 3px;
+      }
+
+      .paid-element-text {
+        font-weight: 500;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .member-paid {
+      background-color: green;
+    }
+
+    .member-not-paid {
+      background-color: red;
+    }
+  }
+}
+
+.label {
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}

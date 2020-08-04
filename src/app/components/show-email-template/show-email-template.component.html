@@ -1,0 +1,15 @@
+<h2 mat-dialog-title class="title">
+  <mat-icon>pageview</mat-icon>
+  <div>E-mail skabelon</div>
+</h2>
+<div mat-dialog-content>
+  <div class="content">
+    <h3 class="subject">
+      {{subject}}
+    </h3>
+    <div [innerHTML]="body" class="body"></div>
+  </div>
+</div>
+<div mat-dialog-actions class="button-container">
+  <button mat-raised-button [mat-dialog-close]="false" cdkFocusInitial>Luk</button>
+</div>

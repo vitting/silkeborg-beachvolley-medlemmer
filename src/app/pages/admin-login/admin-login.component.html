@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="content">
+    <div class="logo-container">
+      <div class="logo">
+        <img src="assets/images/sbv_logo_250x250.png" alt="logo" />
+      </div>
+      <div class="logo-text">
+        Login<br /><br />Silkeborg Beachvolley<br /><br />Medlems administration
+      </div>
+    </div>
+    <div class="button-container" [@loginAnim]="loginButtonState">
+      <button mat-raised-button color="primary" type="button" (click)="login()">
+        Login
+      </button>
+    </div>
+    <div [@loginAnim]="loginErrorState" class="login-error-container">
+      <mat-card>
+        <div class="icon-container">
+          <mat-icon color="warn">error</mat-icon>
+        </div>
+        <p>Din kan ikke logges ind da din bruger ikke er godkendt.</p>
+        <p>Kontakt en administrator for at få din e-mail godkendt</p>
+      </mat-card>
+    </div>
+    <div [@loginAnim]="loginSuccessState">
+      <mat-card>
+        <div class="icon-container">
+          <mat-icon color="primary">info</mat-icon>
+        </div>
+        <p>Din bruger er logget ind.</p>
+        <p>Fortsæt til administration</p>
+        <div class="button-container">
+          <button mat-raised-button [routerLink]="'/admin'" color="primary">Gå til administration</button>
+        </div>
+      </mat-card>
+    </div>
+
+  </div>
+</div>

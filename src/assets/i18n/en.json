@@ -1,0 +1,29 @@
+{
+  "MEMBERSHIP_FORM": {
+    "TITLE": "Membership in",
+    "TEAM_LABEL": "Team",
+    "TEAM_PLACEHOLDER": "Chose your team",
+    "NAME_LABEL": "Name",
+    "NAME_PLACEHOLDER": "type your name",
+    "ADDRESS_LABEL": "Address",
+    "ADDRESS_PLACEHOLDER": "type your address",
+    "ZIPCODE_LABEL": "ZIP code",
+    "ZIPCODE_PLACEHOLDER": "type your ZIP code",
+    "DATEOFBIRTH_TITLE": "Date of birth",
+    "DAY_LABEL": "Day",
+    "MONTH_LABEL": "Month",
+    "YEAR_LABEL": "Year",
+    "EMAIL_PLACEHOLDER": "type your email address",
+    "MOBILE_LABEL": "Mobile",
+    "MOBILE_PLACEHOLDER": "type your mobile number",
+    "COMMENT_LABEL": "Comment",
+    "COMMENT_PLACEHOLDER": "write a comment",
+    "SUBMITBUTTON_TEXT": "Submit"
+  },
+  "MEMBERSHIP_ERRORS": {
+    "REQUIRED_ERROR": "Required",
+    "ZIPCODE_ERROR": "Not a valid zip code",
+    "MOBILE_ERROR": "Not a valid mobile number",
+    "EMAIL_ERROR": "Not a valid email address"
+  }
+}

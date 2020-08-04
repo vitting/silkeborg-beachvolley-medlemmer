@@ -1,0 +1,50 @@
+<h2 mat-dialog-title class="title">
+  <mat-icon>view_headline</mat-icon> <span>Log</span>
+</h2>
+<div mat-dialog-content>
+  <div class="line element">
+    <div class="label">
+      Log Id:
+    </div>
+    <div class="value">
+      {{log.id}}
+    </div>
+  </div>
+  <div class="line element">
+    <div class="label">
+      Oprettet:
+    </div>
+    <div class="value">
+      {{log.date.toDate() | amLocal | amDateFormat:'DD-MM-YYYY [kl.] HH:mm'}}
+    </div>
+  </div>
+  <div class="line element">
+    <div class="label">
+      Type:
+    </div>
+    <div class="value">
+      {{log.type}}
+    </div>
+  </div>
+  <div class="line element">
+    <div class="label">
+      Bruger:
+    </div>
+    <div class="value">
+      {{getAdminUser(log?.userId)}}
+    </div>
+  </div>
+  <div class="element">
+    <div class="label">
+      Besked:
+    </div>
+    <div class="value">
+      {{log.message}}
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions class="button-container">
+  <button mat-raised-button (click)="closeDialog()" cdkFocusInitial>
+    Luk
+  </button>
+</div>

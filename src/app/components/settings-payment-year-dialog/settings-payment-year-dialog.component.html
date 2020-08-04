@@ -1,0 +1,59 @@
+<h2 mat-dialog-title class="title">
+  <mat-icon>payment</mat-icon>
+  <div>{{title}}</div>
+</h2>
+<div mat-dialog-content>
+  <div class="content">
+    <form
+      [formGroup]="paymentForm"
+      (ngSubmit)="onSubmit()"
+      #paymentLineForm="ngForm"
+    >
+      <div class="field" *ngIf="showTeamSelect">
+        <mat-form-field class="form-field-teams">
+          <mat-label>Hold</mat-label>
+          <mat-select formControlName="team">
+            <mat-option *ngFor="let team of teams" [value]="team.id">
+              {{team.name}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="paymentForm.get('team').invalid"
+            >Vælg et hold</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="field year-amount">
+        <mat-form-field class="form-field-year">
+          <mat-label>År</mat-label>
+          <input matInput type="number" required formControlName="year" />
+          <mat-error *ngIf="paymentForm.get('year').invalid"
+            >{{getError("year", "År")}}</mat-error
+          >
+        </mat-form-field>
+        <div class="spacer">-</div>
+        <mat-form-field class="form-field-amount">
+          <mat-label>Beløb</mat-label>
+          <input matInput type="number" required formControlName="amount" />
+          <span matSuffix>kr</span>
+          <mat-error *ngIf="paymentForm.get('amount').invalid"
+            >{{getError("amount", "Beløb")}}</mat-error
+          >
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+</div>
+<div mat-dialog-actions class="button-container">
+  <button type="button" mat-raised-button (click)="closeDialog()">
+    Luk
+  </button>
+  <button
+    mat-raised-button
+    color="primary"
+    type="button"
+    (click)="submitForm()"
+    [disabled]="!paymentForm.valid"
+  >
+    {{buttonTitle}}
+  </button>
+</div>

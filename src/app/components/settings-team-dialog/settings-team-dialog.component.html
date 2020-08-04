@@ -1,0 +1,41 @@
+<h2 mat-dialog-title class="title">
+  <mat-icon>group</mat-icon>
+  <div>{{title}}</div>
+</h2>
+<div mat-dialog-content>
+  <div class="content">
+    <form [formGroup]="teamForm" (ngSubmit)="onSubmit()" #teamLineForm="ngForm">
+      <div class="field">
+        <mat-form-field class="form-field-name">
+          <mat-label>Navn på holdet</mat-label>
+          <input matInput required formControlName="name" />
+          <mat-error *ngIf="teamForm.get('name').invalid"
+            >{{getError(teamForm.get('name'))}}</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="field form-field-active">
+        <mat-slide-toggle
+          color="primary"
+          formControlName="active"
+          labelPosition="before"
+          >Er holdet aktivt</mat-slide-toggle
+        >
+      </div>
+    </form>
+  </div>
+</div>
+<div mat-dialog-actions class="button-container">
+  <button type="button" mat-raised-button (click)="closeDialog()">
+    Luk
+  </button>
+  <button
+    mat-raised-button
+    color="primary"
+    type="button"
+    (click)="submitForm()"
+    [disabled]="!teamForm.valid"
+  >
+    {{buttonTitle}}
+  </button>
+</div>

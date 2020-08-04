@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "silkeborgbeachvolley-medlemmer": {
+      "hosting": {
+        "silkeborg-beachvolley-medlemmer": [
+          "silkeborgbeachvolley-medlemmer"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "silkeborgbeachvolley-medlemmer": "silkeborgbeachvolley-medlemmer"
+  }
+}

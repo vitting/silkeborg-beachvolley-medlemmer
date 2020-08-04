@@ -1,0 +1,77 @@
+<h2 mat-dialog-title class="title">
+  <mat-icon>email</mat-icon> <span>E-mail Log</span>
+</h2>
+<div mat-dialog-content>
+  <div class="content">
+    <div class="line element">
+      <div class="label">
+        Email Service Id:
+      </div>
+      <div class="value">
+        {{emailLog.emailserviceId}}
+      </div>
+    </div>
+    <div class="line element">
+      <div class="label">
+        <span *ngIf="emailLog.status ==='ok'">Sendt:</span>
+        <span *ngIf="emailLog.status !=='ok'">Forsøgt sendt:</span>
+      </div>
+      <div class="value">
+        {{emailLog.sendtAt.toDate() | amLocal | amDateFormat:'DD-MM-YYYY [kl.] HH:mm'}}
+      </div>
+    </div>
+    <div class="line element">
+      <div class="label">
+        Type:
+      </div>
+      <div class="value">
+        {{emailLog.type}}
+      </div>
+    </div>
+    <div class="line element">
+      <div class="label">
+        Status:
+      </div>
+      <div class="value">
+        <span *ngIf="emailLog.status ==='ok'">Ok</span>
+        <span *ngIf="emailLog.status !=='ok'">Fejl</span>
+      </div>
+    </div>
+    <div class="emails_line element">
+      <div class="label">
+        Modtagere:
+      </div>
+      <div class="emails">
+        <div class="email_value" *ngFor="let email of getEmails(emailLog.emails)">
+          {{email}}
+        </div>
+      </div>
+    </div>
+    <div class="error_line element"  *ngIf="emailLog.status !=='ok'">
+      <div class="label">
+        Fejl:
+      </div>
+      <div class="error_value">
+        {{emailLog.error}}
+      </div>
+    </div>
+    <div class="subject_line element">
+      <div class="label">
+        Emne:
+      </div>
+      <div class="value">
+        {{emailLog.subject}}
+      </div>
+    </div>
+    <div class="body_line element">
+      <div class="label">
+        Indhold:
+      </div>
+      <div class="body_value" [innerHTML]="emailLog.body">
+      </div>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions class="button-container">
+  <button mat-raised-button (click)="closeDialog()" cdkFocusInitial>Luk</button>
+</div>

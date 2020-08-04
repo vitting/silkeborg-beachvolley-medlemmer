@@ -1,0 +1,177 @@
+<h2 mat-dialog-title class="title">
+  <mat-icon>person</mat-icon> <span>{{formTitleText}}</span>
+</h2>
+<div mat-dialog-content>
+  <div class="content">
+    <form
+      (ngSubmit)="onSubmit()"
+      [formGroup]="membershipForm"
+      autocomplete="off"
+    >
+      <div class="field" *ngIf="teams.length > 1">
+        <mat-form-field class="form-field">
+          <mat-label>Hold</mat-label>
+          <mat-select formControlName="team" required>
+            <mat-option [value]="team" *ngFor="let team of teams">
+              <div [ngClass]="{'team-not-active': !team.active}">
+                {{team.name}}
+              </div>
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="membershipForm.get('team').invalid"
+            >{{getError("team")}}</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="field">
+        <mat-form-field class="form-field">
+          <mat-label>Navn</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="Indtast dit navn"
+            required
+            formControlName="name"
+          />
+          <mat-error *ngIf="membershipForm.get('name').invalid"
+            >{{getError("name")}}</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="field">
+        <mat-form-field class="form-field">
+          <mat-label>Adresse</mat-label>
+          <input
+            matInput
+            type="text"
+            required
+            placeholder="Indtast din adresse"
+            formControlName="address"
+          />
+          <mat-error *ngIf="membershipForm.get('address').invalid"
+            >{{getError("address")}}</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="field">
+        <mat-form-field class="form-field">
+          <mat-label>Postnr</mat-label>
+          <input
+            matInput
+            type="number"
+            min="1301"
+            max="9990"
+            placeholder="Indtast dit postnummer"
+            formControlName="zipcode"
+            required
+          />
+          <mat-error *ngIf="membershipForm.get('zipcode').invalid"
+            >{{getError("zipcode")}}</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="field">
+        <div class="birthday-title">Fødselsdato *</div>
+        <div class="birthday-container">
+          <mat-form-field class="select-form-field select-form-field-small">
+            <mat-label>Dag</mat-label>
+            <mat-select formControlName="birthDay" required>
+              <mat-option [value]="day" *ngFor="let day of birthDays">
+                {{day}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="membershipForm.get('birthDay').invalid"
+              >{{getError("birthDay")}}</mat-error
+            >
+          </mat-form-field>
+          <mat-form-field class="select-form-field select-form-field-big">
+            <mat-label>Måned</mat-label>
+            <mat-select formControlName="birthMonth" required>
+              <mat-option
+                [value]="i"
+                *ngFor="let month of birthMonths;let i = index"
+              >
+                {{month}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="membershipForm.get('birthMonth').invalid"
+              >{{getError("birthMonth")}}</mat-error
+            >
+          </mat-form-field>
+          <mat-form-field class="select-form-field select-form-field-small">
+            <mat-label>År</mat-label>
+            <mat-select formControlName="birthYear" required>
+              <mat-option [value]="year" *ngFor="let year of birthYears">
+                {{year}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="membershipForm.get('birthYear').invalid"
+              >{{getError("birthYear")}}</mat-error
+            >
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="field">
+        <mat-form-field class="form-field">
+          <mat-label>E-mail</mat-label>
+          <input
+            matInput
+            type="email"
+            required
+            placeholder="Indtast din E-mail adresse"
+            formControlName="email"
+          />
+          <mat-error *ngIf="membershipForm.get('email').invalid"
+            >{{getError("email")}}</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="field">
+        <mat-form-field class="form-field">
+          <mat-label>Mobil</mat-label>
+          <input
+            matInput
+            type="number"
+            required
+            placeholder="Indtast dit mobilnummer"
+            formControlName="phone"
+          />
+          <mat-error *ngIf="membershipForm.get('phone').invalid"
+            >{{getError("phone")}}</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="field">
+        <mat-form-field class="form-field">
+          <mat-label>Kommentar</mat-label>
+          <textarea
+            matInput
+            rows="3"
+            placeholder="Skriv en kommentar"
+            formControlName="comment"
+          ></textarea>
+        </mat-form-field>
+      </div>
+      <div class="field send-email" *ngIf="showEmailCreatonControl">
+        <mat-checkbox
+          [checked]="sendCreationEmail"
+          (change)="sendCreationEmailChange($event)"
+          >Send oprettelses e-mail til medlem</mat-checkbox
+        >
+      </div>
+      <div class="button-container">
+        <button type="button" mat-raised-button (click)="closeDialog('cancel')">
+          Luk
+        </button>
+        <button
+          type="submit"
+          mat-raised-button
+          color="primary"
+          [disabled]="!membershipForm.valid"
+        >
+          {{formButtonText}}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+.team-line {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color: lightgray;
+  }
+
+  .team-line-buttons {
+    width: 120px;
+  }
+
+  .team-fields {
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .team-field {
+    display: flex;
+    flex-direction: column;
+
+    .team-field-title {
+      font-weight: 500;
+    }
+  }
+
+  .team-field-team {
+    width: 160px;
+  }
+
+  .team-add {
+    margin: 10px 0;
+  }
+
+  .team-delete {
+    margin-left: 10px;
+  }
+
+  .team-active {
+    align-self: center;
+  }
+}

@@ -1,0 +1,35 @@
+<div class="line email-edit-line">
+  <button
+    class="email-edit-button"
+    mat-icon-button
+    matTooltip="Opret/Rediger E-mail skabelon"
+    (click)="editEmailText(emailTemplate)"
+  >
+    <mat-icon>edit</mat-icon>
+  </button>
+  <button
+    class="email-edit-button"
+    mat-icon-button
+    matTooltip="Opret/rediger navn/beskrivelse"
+    (click)="editTemplate(emailTemplate)"
+  >
+    <mat-icon>build</mat-icon>
+  </button>
+  <button
+    class="email-edit-button"
+    mat-icon-button
+    matTooltip="Slet e-mail skabelon"
+    (click)="deleteTemplate(emailTemplate)"
+    [disabled]="emailTemplate.type !== 'custom'"
+  >
+    <mat-icon>delete</mat-icon>
+  </button>
+  <div class="email-text" (click)="showEmailText(emailTemplate)" matTooltip="Vis skabelon">
+    <div class="label">
+      {{emailTemplate.name}}
+    </div>
+    <div class="sub-label">
+      ({{emailTemplate.description}})
+    </div>
+  </div>
+</div>

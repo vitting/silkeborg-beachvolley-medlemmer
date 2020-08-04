@@ -1,0 +1,208 @@
+<div class="container">
+  <div class="top">
+    <div class="logo">
+      <img src="/assets/images/sbv_logo_250x250.png" alt="logo" />
+    </div>
+    <h1 class="title">
+      {{"MEMBERSHIP_FORM.TITLE" | translate}}<br />Silkeborg Beachvolley
+    </h1>
+    <div class="logo">
+      <img src="/assets/images/sbv_logo_250x250.png" alt="logo" />
+    </div>
+  </div>
+  <div class="receipt-message-container" [@receiptAnim]="stateReceipt">
+    <div class="receipt-message" [innerHTML]="completionText"></div>
+  </div>
+  <div class="content" [@membershipAnim]="stateMembership">
+    <form
+      (ngSubmit)="onSubmit()"
+      [formGroup]="membershipForm"
+      autocomplete="off"
+    >
+      <div class="field" *ngIf="teams.length > 1">
+        <mat-form-field class="form-field">
+          <mat-label>{{ 'MEMBERSHIP_FORM.TEAM_LABEL' | translate }}</mat-label>
+          <mat-select
+            formControlName="team"
+            placeholder="{{ 'MEMBERSHIP_FORM.TEAM_PLACEHOLDER' | translate }}"
+            required
+          >
+            <ng-container *ngFor="let team of teams">
+              <mat-option [value]="team" *ngIf="team.value !== 'default'">
+                {{team.name}}
+              </mat-option>
+            </ng-container>
+          </mat-select>
+          <mat-error *ngIf="membershipForm.get('team').invalid"
+            >{{getError("team")}}</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="field">
+        <mat-form-field class="form-field">
+          <mat-label>{{"MEMBERSHIP_FORM.NAME_LABEL" | translate}}</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="{{ 'MEMBERSHIP_FORM.NAME_PLACEHOLDER' | translate }}"
+            required
+            formControlName="name"
+          />
+          <mat-error *ngIf="membershipForm.get('name').invalid"
+            >{{getError("name")}}</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="field">
+        <mat-form-field class="form-field">
+          <mat-label>{{"MEMBERSHIP_FORM.ADDRESS_LABEL" | translate}}</mat-label>
+          <input
+            matInput
+            type="text"
+            required
+            placeholder="{{ 'MEMBERSHIP_FORM.ADDRESS_PLACEHOLDER' | translate }}"
+            formControlName="address"
+          />
+          <mat-error *ngIf="membershipForm.get('address').invalid"
+            >{{getError("address")}}</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="field">
+        <mat-form-field class="form-field">
+          <mat-label>{{"MEMBERSHIP_FORM.ZIPCODE_LABEL" | translate}}</mat-label>
+          <input
+            matInput
+            type="number"
+            min="1301"
+            max="9990"
+            placeholder="{{ 'MEMBERSHIP_FORM.ZIPCODE_PLACEHOLDER' | translate }}"
+            formControlName="zipcode"
+            required
+          />
+          <mat-error *ngIf="membershipForm.get('zipcode').invalid"
+            >{{getError("zipcode")}}</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="field">
+        <div class="birthday-title">
+          {{"MEMBERSHIP_FORM.DATEOFBIRTH_TITLE" | translate}} *
+        </div>
+        <div class="birthday-container">
+          <mat-form-field class="select-form-field">
+            <mat-label>{{ 'MEMBERSHIP_FORM.DAY_LABEL' | translate }}</mat-label>
+            <mat-select formControlName="birthDay" required>
+              <mat-option [value]="day" *ngFor="let day of birthDays">
+                {{day}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="membershipForm.get('birthDay').invalid"
+              >{{getError("birthDay")}}</mat-error
+            >
+          </mat-form-field>
+          <mat-form-field class="select-form-field">
+            <mat-label
+              >{{ 'MEMBERSHIP_FORM.MONTH_LABEL' | translate }}</mat-label
+            >
+            <mat-select formControlName="birthMonth" required>
+              <mat-option
+                [value]="i"
+                *ngFor="let month of birthMonths;let i = index"
+              >
+                {{month}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="membershipForm.get('birthMonth').invalid"
+              >{{getError("birthMonth")}}</mat-error
+            >
+          </mat-form-field>
+          <mat-form-field class="select-form-field">
+            <mat-label
+              >{{ 'MEMBERSHIP_FORM.YEAR_LABEL' | translate }}</mat-label
+            >
+            <mat-select formControlName="birthYear" required>
+              <mat-option [value]="year" *ngFor="let year of birthYears">
+                {{year}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="membershipForm.get('birthYear').invalid"
+              >{{getError("birthYear")}}</mat-error
+            >
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="field">
+        <mat-form-field class="form-field">
+          <mat-label>E-mail</mat-label>
+          <input
+            matInput
+            type="email"
+            required
+            placeholder="{{ 'MEMBERSHIP_FORM.EMAIL_PLACEHOLDER' | translate }}"
+            formControlName="email"
+          />
+          <mat-error *ngIf="membershipForm.get('email').invalid"
+            >{{getError("email")}}</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="field">
+        <mat-form-field class="form-field">
+          <mat-label
+            >{{ 'MEMBERSHIP_FORM.MOBILE_LABEL' | translate }}</mat-label
+          >
+          <input
+            matInput
+            type="number"
+            required
+            placeholder="{{ 'MEMBERSHIP_FORM.MOBILE_PLACEHOLDER' | translate }}"
+            formControlName="phone"
+          />
+          <mat-error *ngIf="membershipForm.get('phone').invalid"
+            >{{getError("phone")}}</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="field">
+        <mat-form-field class="form-field">
+          <mat-label
+            >{{ 'MEMBERSHIP_FORM.COMMENT_LABEL' | translate }}</mat-label
+          >
+          <textarea
+            matInput
+            rows="3"
+            placeholder="{{ 'MEMBERSHIP_FORM.COMMENT_PLACEHOLDER' | translate }}"
+            formControlName="comment"
+          ></textarea>
+        </mat-form-field>
+      </div>
+      <div class="button-container">
+        <button
+          mat-button
+          class="show-in-english"
+          (click)="changeLanguage('en')"
+          *ngIf="showInEnglishButton"
+        >
+          <mat-icon>language</mat-icon> Show in english
+        </button>
+        <button
+          mat-button
+          class="show-in-english"
+          (click)="changeLanguage('da')"
+          *ngIf="!showInEnglishButton"
+        >
+          <mat-icon>language</mat-icon> Vis på dansk
+        </button>
+        <button
+          type="submit"
+          mat-raised-button
+          color="primary"
+          [disabled]="!membershipForm.valid"
+        >
+          {{ 'MEMBERSHIP_FORM.SUBMITBUTTON_TEXT' | translate }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

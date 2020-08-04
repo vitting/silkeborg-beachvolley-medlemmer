@@ -1,0 +1,73 @@
+<h2 mat-dialog-title class="title">
+  <mat-icon>poll</mat-icon> <span>Medlems statestik</span>
+</h2>
+<div mat-dialog-content>
+  <mat-list role="list">
+    <mat-list-item role="listitem">
+      <div class="line">
+        <span>Samlet antal oprettede medlemmer</span>
+        <span class="value">{{statData.totalMembers}}</span>
+      </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item role="listitem">
+      <div class="line">
+        <span>Antal oprettede medlemmer < 18</span>
+        <span class="value">{{statData.totalMembersUnder18}}</span>
+      </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item role="listitem">
+      <div class="line">
+        <span>Antal oprettede medlemmer 18+</span>
+        <span class="value">{{statData.totalMembers18Plus}}</span>
+      </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item role="listitem">
+      <div class="line">
+        <span>Betalende medlemmer denne sæson < 18</span>
+        <span class="value">{{statData.totalPaiedMembersUnder18}}</span>
+      </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item role="listitem">
+      <div class="line">
+        <span>Betalende medlemmer denne sæson 18+</span>
+        <span class="value">{{statData.totalPaiedMembers18Plus}}</span>
+      </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item role="listitem">
+      <div class="line">
+        <span>Antal nye medlemmer {{lastYear}}</span>
+        <span class="value">{{statData.totalNewMembersLastYear}}</span>
+      </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item role="listitem">
+      <div class="line">
+        <span>Antal betalte kontingenter {{lastYear}}</span>
+        <span class="value">{{statData.totalContributionLastYear}}</span>
+      </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item role="listitem">
+      <div class="line">
+        <span>Antal nye medlemmer {{currentYear}}</span>
+        <span class="value">{{statData.totalNewMembersCurrentYear}}</span>
+      </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item role="listitem">
+      <div class="line">
+        <span>Antal betalte kontingenter {{currentYear}}</span>
+        <div class="value">{{statData.totalContributionCurrentYear}}</div>
+      </div>
+    </mat-list-item>
+  </mat-list>
+</div>
+<div mat-dialog-actions class="button-container">
+  <button mat-raised-button (click)="closeDialog()" cdkFocusInitial>Luk</button>
+</div>
+

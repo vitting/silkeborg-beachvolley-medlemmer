@@ -1,0 +1,45 @@
+.loggedout {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.loggedin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  .loggin-left {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.profileimage {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+
+.logo {
+  display: flex;
+
+  img {
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .loggedin-user-name {
+    font-size: 0.8em;
+  }
+
+  .loggedin-title {
+    font-size: 0.8em;
+  }
+}

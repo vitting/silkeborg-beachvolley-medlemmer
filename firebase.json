@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "silkeborg-beachvolley-medlemmer",
+      "public": "dist/silkeborg-beachvolley-medlemmer",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

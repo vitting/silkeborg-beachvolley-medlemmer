@@ -1,0 +1,62 @@
+<h2 mat-dialog-title class="title">
+  <mat-icon>person</mat-icon> <span>{{title}}</span>
+</h2>
+<div mat-dialog-content>
+  <div class="content">
+    <form
+      [formGroup]="adminUserForm"
+      (ngSubmit)="onSubmit()"
+      autocomplete="off"
+    >
+      <mat-form-field>
+        <mat-label>Navn</mat-label>
+        <input
+          matInput
+          placeholder="Indtast navn på bruger"
+          formControlName="name"
+          required
+        />
+        <mat-error *ngIf="adminUserForm.get('name').invalid"
+          >Navn skal udfyldes</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Gmail e-mail</mat-label>
+        <input
+          matInput
+          placeholder="Indtast e-mail på bruger"
+          formControlName="email"
+          (blur)="isEmailAlreadyInUse()"
+          required
+        />
+        <mat-error *ngIf="adminUserForm.get('email').invalid"
+          >{{getError()}}</mat-error
+        >
+      </mat-form-field>
+      <div>
+        <mat-slide-toggle formControlName="admin">Er administrator</mat-slide-toggle>
+      </div>
+      <div class="send-email" *ngIf="showSendEmail">
+        <mat-checkbox
+          labelPosition="before"
+          (change)="sendEmailStatus($event)"
+          [value]="sendEmailToNewUser"
+          >Send oprettelses e-mail til bruger</mat-checkbox
+        >
+      </div>
+      <div class="button-container">
+        <button mat-raised-button (click)="closeDialog()" type="button">
+          Luk
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="adminUserForm.invalid"
+        >
+          {{buttonTitle}}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,212 @@
+<div class="container">
+  <div class="content">
+    <div class="config-info-message">
+      <div>Opsætning af Silkeborg Beachvolley Medlems administration</div>
+    </div>
+    <div [@fadeInAnim]="showStartButton">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="startConfig()"
+        [disabled]="configIsComplete"
+        type="button"
+      >
+        Tryk her for at starte konfigurationen
+      </button>
+    </div>
+
+    <div class="adminuser-container" [@fadeInAnim]="showCreateAdminUser">
+      <mat-card class="adminuser">
+        <h3>Opret en administrations bruger</h3>
+        <form
+          [formGroup]="adminUserForm"
+          (ngSubmit)="onSubmit()"
+          autocomplete="off"
+        >
+          <p>
+            <mat-form-field>
+              <mat-label>Navn på administrator bruger</mat-label>
+              <input
+                matInput
+                placeholder="Indtast navn på administrator bruger"
+                formControlName="name"
+                required
+              />
+              <mat-error
+                >{{getEmailFormError(adminUserForm.get("name"))}}</mat-error
+              >
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field>
+              <mat-label>Gmail e-mail adresse</mat-label>
+              <input
+                matInput
+                placeholder="Indtast en Gmail adresse"
+                formControlName="email"
+                required
+                type="email"
+              />
+              <mat-error
+                >{{getEmailFormError(adminUserForm.get("email"))}}</mat-error
+              >
+            </mat-form-field>
+          </p>
+          <div class="adminuser-button">
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              [disabled]="adminUserForm.invalid && !configIsComplete"
+            >
+              Opret
+            </button>
+          </div>
+        </form>
+      </mat-card>
+    </div>
+
+    <div [@fadeInAnim]="showLogin" class="login-container">
+      <mat-card class="login">
+        <div *ngIf="!user">
+          <h3>Login med din administrator bruger</h3>
+          <p>
+            <button
+              mat-raised-button
+              type="button"
+              color="primary"
+              [disabled]="configIsComplete"
+              (click)="login()"
+            >
+              Login
+            </button>
+          </p>
+        </div>
+        <div *ngIf="user">
+          <h3>Følgende administrator bruger er logget ind</h3>
+          <h3>{{user.displayName}}</h3>
+          <h3>{{user.email}}</h3>
+          <p class="login-buttons">
+            <button
+              mat-raised-button
+              color="accent"
+              (click)="login()"
+              type="button"
+            >
+              Login med en anden bruger
+            </button>
+            <button
+              mat-raised-button
+              type="button"
+              color="primary"
+              (click)="continueConfig()"
+            >
+              Fortsæt konfiguration
+            </button>
+          </p>
+        </div>
+      </mat-card>
+    </div>
+
+    <div
+      class="output-container"
+      [@fadeInAnim]="showElements"
+      (@fadeInAnim.done)="elementsShown($event)"
+    >
+      <mat-card class="output">
+        <p>
+          <button
+            mat-raised-button
+            type="button"
+            color="primary"
+            (click)="startInit()"
+            [disabled]="configRunning || configIsComplete"
+          >
+            Start database oprettelse
+          </button>
+        </p>
+        <div>
+          <p class="elem">
+            <span class="label">Standard beskeder</span>
+            <mat-spinner
+              mode="determinate"
+              [value]="messageValue"
+              diameter="20"
+            ></mat-spinner>
+            <mat-icon *ngIf="messageValue === -1">hourglass_empty</mat-icon>
+          </p>
+          <p class="elem">
+            <span class="label">Standard tællere</span>
+            <mat-spinner
+              mode="determinate"
+              [value]="counterValue"
+              diameter="20"
+            ></mat-spinner>
+            <mat-icon *ngIf="counterValue === -1">hourglass_empty</mat-icon>
+          </p>
+          <p class="elem">
+            <span class="label">Standard E-mail Skabeloner</span>
+            <mat-spinner
+              mode="determinate"
+              [value]="emailTemplateValue"
+              diameter="20"
+            ></mat-spinner>
+            <mat-icon *ngIf="emailTemplateValue === -1"
+              >hourglass_empty</mat-icon
+            >
+          </p>
+          <p class="elem">
+            <span class="label">Standard skabelon variabler</span>
+            <mat-spinner
+              mode="determinate"
+              [value]="tempVarValue"
+              diameter="20"
+            ></mat-spinner>
+            <mat-icon *ngIf="tempVarValue === -1">hourglass_empty</mat-icon>
+          </p>
+          <p class="elem">
+            <span class="label">Standard hold</span>
+            <mat-spinner
+              mode="determinate"
+              [value]="teamValue"
+              diameter="20"
+            ></mat-spinner>
+            <mat-icon *ngIf="teamValue === -1">hourglass_empty</mat-icon>
+          </p>
+          <p class="elem">
+            <span class="label">Betaling for standard hold</span>
+            <mat-spinner
+              mode="determinate"
+              [value]="contributionValue"
+              diameter="20"
+            ></mat-spinner>
+            <mat-icon *ngIf="contributionValue === -1"
+              >hourglass_empty</mat-icon
+            >
+          </p>
+          <p class="elem">
+            <span class="label">Postnummere og byer</span>
+            <mat-spinner
+              mode="determinate"
+              [value]="zipcodeValue"
+              diameter="20"
+            ></mat-spinner>
+            <mat-icon *ngIf="zipcodeValue === -1">hourglass_empty</mat-icon>
+          </p>
+        </div>
+        <div class="progress" [@fadeInAnim]="showConsole">
+          <mat-icon *ngIf="!configIsComplete">info_outline</mat-icon>
+          <mat-icon *ngIf="configIsComplete">thumb_up</mat-icon>
+          <span>{{consoleText}}</span>
+          <mat-icon *ngIf="configIsComplete">thumb_up</mat-icon>
+          <mat-icon *ngIf="!configIsComplete">info_outline</mat-icon>
+        </div>
+        <div *ngIf="configIsComplete" class="goto-login">
+          <button mat-raised-button routerLink="/admin/login" color="primary">
+            Forsæt til Administration
+          </button>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

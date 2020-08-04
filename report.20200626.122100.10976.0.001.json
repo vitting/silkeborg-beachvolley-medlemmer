@@ -1,0 +1,485 @@
+
+{
+  "header": {
+    "reportVersion": 2,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20200626.122100.10976.0.001.json",
+    "dumpEventTime": "2020-06-26T12:21:00Z",
+    "dumpEventTimeStamp": "1593166860521",
+    "processId": 10976,
+    "threadId": null,
+    "cwd": "d:\\Udvikling\\angular\\silkeborg-beachvolley-medlemmer",
+    "commandLine": [
+      "node",
+      "C:\\Users\\cvn_v\\AppData\\Roaming\\npm\\\\node_modules\\@angular\\cli\\bin\\ng",
+      "serve"
+    ],
+    "nodejsVersion": "v12.16.3",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.16.3",
+      "v8": "7.8.279.23-node.35",
+      "uv": "1.34.2",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.16.0",
+      "modules": "72",
+      "nghttp2": "1.40.0",
+      "napi": "5",
+      "llhttp": "2.0.4",
+      "http_parser": "2.9.3",
+      "openssl": "1.1.1g",
+      "cldr": "36.0",
+      "icu": "65.1",
+      "tz": "2019c",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.16.3/node-v12.16.3-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.16.3/node-v12.16.3.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.16.3/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.19041",
+    "osVersion": "Windows 10 Home",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+        "speed": 2808,
+        "user": 26326703,
+        "nice": 0,
+        "sys": 54624671,
+        "idle": 562388843,
+        "irq": 5885234
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+        "speed": 2808,
+        "user": 17219546,
+        "nice": 0,
+        "sys": 13600640,
+        "idle": 612519859,
+        "irq": 195437
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+        "speed": 2808,
+        "user": 35142750,
+        "nice": 0,
+        "sys": 39548578,
+        "idle": 568648734,
+        "irq": 382578
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+        "speed": 2808,
+        "user": 17943484,
+        "nice": 0,
+        "sys": 14905750,
+        "idle": 610490828,
+        "irq": 389921
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+        "speed": 2808,
+        "user": 32958796,
+        "nice": 0,
+        "sys": 31775625,
+        "idle": 578605656,
+        "irq": 556796
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+        "speed": 2808,
+        "user": 16562843,
+        "nice": 0,
+        "sys": 13123500,
+        "idle": 613653734,
+        "irq": 131296
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+        "speed": 2808,
+        "user": 26401406,
+        "nice": 0,
+        "sys": 24613843,
+        "idle": 592324812,
+        "irq": 381421
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+        "speed": 2808,
+        "user": 25730000,
+        "nice": 0,
+        "sys": 20028640,
+        "idle": 597581421,
+        "irq": 198453
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "Ethernet 2",
+        "internal": false,
+        "mac": "0a:00:27:00:00:1e",
+        "address": "fe80::c8ef:ac45:e1f6:9641",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 30
+      },
+      {
+        "name": "Ethernet 2",
+        "internal": false,
+        "mac": "0a:00:27:00:00:1e",
+        "address": "192.168.56.1",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Wi-Fi",
+        "internal": false,
+        "mac": "88:78:73:6e:6b:df",
+        "address": "fe80::e435:aa60:29ec:88ee",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 3
+      },
+      {
+        "name": "Wi-Fi",
+        "internal": false,
+        "mac": "88:78:73:6e:6b:df",
+        "address": "192.168.1.16",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "127.0.0.1",
+        "netmask": "255.0.0.0",
+        "family": "IPv4"
+      }
+    ],
+    "host": "CVN-ASUS-NOTEBOOK"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x00007ff65f632449",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+11577"
+    },
+    {
+      "pc": "0x00007ff65f6369a9",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+29337"
+    },
+    {
+      "pc": "0x00007ff65f635828",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+24856"
+    },
+    {
+      "pc": "0x00007ff65f76d8c2",
+      "symbol": "v8::base::CPU::has_sse+68658"
+    },
+    {
+      "pc": "0x00007ff65ff89bbe",
+      "symbol": "v8::Isolate::ReportExternalAllocationLimitReached+94"
+    },
+    {
+      "pc": "0x00007ff65ff71c91",
+      "symbol": "v8::SharedArrayBuffer::Externalize+833"
+    },
+    {
+      "pc": "0x00007ff65fe3e1ec",
+      "symbol": "v8::internal::Heap::EphemeronKeyWriteBarrierFromCode+1436"
+    },
+    {
+      "pc": "0x00007ff65fe49420",
+      "symbol": "v8::internal::Heap::ProtectUnprotectedMemoryChunks+1312"
+    },
+    {
+      "pc": "0x00007ff65fe45f44",
+      "symbol": "v8::internal::Heap::PageFlagsAreConsistent+3204"
+    },
+    {
+      "pc": "0x00007ff65fe3b743",
+      "symbol": "v8::internal::Heap::CollectGarbage+1283"
+    },
+    {
+      "pc": "0x00007ff65fe39db4",
+      "symbol": "v8::internal::Heap::AddRetainedMap+2452"
+    },
+    {
+      "pc": "0x00007ff65fe5afbd",
+      "symbol": "v8::internal::Factory::NewFillerObject+61"
+    },
+    {
+      "pc": "0x00007ff65fbc1871",
+      "symbol": "v8::internal::interpreter::JumpTableTargetOffsets::iterator::operator=+1665"
+    },
+    {
+      "pc": "0x00007ff6603d6c4d",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+546637"
+    },
+    {
+      "pc": "0x000001abb43ee8b8",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 2180153344,
+    "totalCommittedMemory": 2180153344,
+    "usedMemory": 2094770568,
+    "availableMemory": 50513264,
+    "memoryLimit": 2197815296,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 262144,
+        "capacity": 32808,
+        "used": 32808,
+        "available": 0
+      },
+      "new_space": {
+        "memorySize": 33554432,
+        "committedMemory": 33554432,
+        "capacity": 16759296,
+        "used": 731640,
+        "available": 16027656
+      },
+      "old_space": {
+        "memorySize": 1848520704,
+        "committedMemory": 1848520704,
+        "capacity": 1833144688,
+        "used": 1833080328,
+        "available": 64360
+      },
+      "code_space": {
+        "memorySize": 11177984,
+        "committedMemory": 11177984,
+        "capacity": 9785824,
+        "used": 9785824,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 38277120,
+        "committedMemory": 38277120,
+        "capacity": 3559360,
+        "used": 3559360,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 247738368,
+        "committedMemory": 247738368,
+        "capacity": 247036320,
+        "used": 247036320,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 622592,
+        "committedMemory": 622592,
+        "capacity": 544288,
+        "used": 544288,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 16759296,
+        "used": 0,
+        "available": 16759296
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 418.593,
+    "kernelCpuSeconds": 15.64,
+    "cpuConsumptionPercent": 11.2642,
+    "maxRss": 2253324288,
+    "pageFaults": {
+      "IORequired": 2240214,
+      "IONotRequired": 0
+    },
+    "fsActivity": {
+      "reads": 7618,
+      "writes": 41
+    }
+  },
+  "libuv": [
+  ],
+  "workers": [
+  ],
+  "environmentVariables": {
+    " GIT_SSH": "C:\\Program Files\\PuTTY\\plink.exe",
+    "=D:": "d:\\Udvikling\\angular\\silkeborg-beachvolley-medlemmer",
+    "=ExitCode": "00000000",
+    "aliases": "D:\\Programmer\\cmder\\config\\user_aliases.cmd",
+    "ALLUSERSPROFILE": "C:\\ProgramData",
+    "ANSICON": "126x1000 (126x30)",
+    "ANSICON_DEF": "7",
+    "APPDATA": "C:\\Users\\cvn_v\\AppData\\Roaming",
+    "architecture": "64",
+    "architecture_bits": "64",
+    "BROWSERSLIST_IGNORE_OLD_DATA": "1",
+    "ccall": "call D:\\Programmer\\cmder\\vendor\\bin\\cexec.cmd",
+    "cexec": "D:\\Programmer\\cmder\\vendor\\bin\\cexec.cmd",
+    "ChocolateyInstall": "C:\\ProgramData\\chocolatey",
+    "ChocolateyLastPathUpdate": "132266967302305972",
+    "CMDER_ALIASES": "1",
+    "CMDER_CLINK": "1",
+    "CMDER_CONFIGURED": "1",
+    "CMDER_INIT_END": "11:16:15,09",
+    "CMDER_INIT_START": "11:16:11,60",
+    "CMDER_ROOT": "D:\\Programmer\\cmder",
+    "CMDER_SHELL": "cmd",
+    "CMDER_USER_FLAGS": " ",
+    "CommonProgramFiles": "C:\\Program Files\\Common Files",
+    "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+    "CommonProgramW6432": "C:\\Program Files\\Common Files",
+    "COMPUTERNAME": "CVN-ASUS-NOTEBO",
+    "ComSpec": "C:\\WINDOWS\\system32\\cmd.exe",
+    "ConEmuANSI": "ON",
+    "ConEmuAnsiLog": "",
+    "ConEmuBackHWND": "0x00AD0C42",
+    "ConEmuBaseDir": "D:\\Programmer\\cmder\\vendor\\conemu-maximus5\\ConEmu",
+    "ConEmuBaseDirShort": "D:\\Programmer\\cmder\\vendor\\conemu-maximus5\\ConEmu",
+    "ConEmuBuild": "180626",
+    "ConEmuDir": "D:\\Programmer\\cmder\\vendor\\conemu-maximus5",
+    "ConEmuDrawHWND": "0x004D0BCA",
+    "ConEmuDrive": "D:",
+    "ConEmuHooks": "Enabled",
+    "ConEmuHWND": "0x00450A24",
+    "ConEmuIsAdmin": "ADMIN",
+    "ConEmuPalette": "Monokai",
+    "ConEmuPID": "8064",
+    "ConEmuServerPID": "26920",
+    "ConEmuTask": "<Startup>",
+    "ConEmuWorkDir": "d:\\Udvikling\\angular\\silkeborg-beachvolley-medlemmer",
+    "ConEmuWorkDrive": "d:",
+    "debug_output": "0",
+    "dp0": "C:\\Users\\cvn_v\\AppData\\Roaming\\npm\\",
+    "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+    "fast_init": "0",
+    "feFlagName": " ",
+    "GIT_INSTALL_ROOT": "C:\\Program Files\\Git",
+    "GOPATH": "D:\\Udvikling\\Go",
+    "GYP_MSVS_VERSION": "2015",
+    "HOME": "C:\\Users\\cvn_v",
+    "HOMEDRIVE": "C:",
+    "HOMEPATH": "\\Users\\cvn_v",
+    "JAVA_HOME": "C:\\Program Files\\Java\\jdk1.8.0_162",
+    "LANG": "da_DK.UTF-8",
+    "lib_base": "call \"D:\\Programmer\\cmder\\vendor\\lib\\lib_base.cmd\"",
+    "lib_console": "call \"D:\\Programmer\\cmder\\vendor\\lib\\lib_console.cmd\"",
+    "lib_git": "call \"D:\\Programmer\\cmder\\vendor\\lib\\lib_git.cmd\"",
+    "lib_path": "call \"D:\\Programmer\\cmder\\vendor\\lib\\lib_path.cmd\"",
+    "lib_profile": "call \"D:\\Programmer\\cmder\\vendor\\lib\\lib_profile.cmd\"",
+    "LOCALAPPDATA": "C:\\Users\\cvn_v\\AppData\\Local",
+    "LOGONSERVER": "\\\\CVN-ASUS-NOTEBO",
+    "max_depth": "1",
+    "nix_tools": "1",
+    "NODE_ENV": "development",
+    "NUMBER_OF_PROCESSORS": "8",
+    "OneDrive": "C:\\Users\\cvn_v\\OneDrive",
+    "OPENSSL_CONF": "C:\\OpenSSL-Win64\\bin\\openssl.cfg",
+    "OS": "Windows_NT",
+    "Path": "D:\\Programmer\\cmder\\bin;D:\\Programmer\\cmder\\vendor\\bin;D:\\Programmer\\cmder\\vendor\\conemu-maximus5\\ConEmu\\Scripts;D:\\Programmer\\cmder\\vendor\\conemu-maximus5;D:\\Programmer\\cmder\\vendor\\conemu-maximus5\\ConEmu;C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Boxstarter;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\130\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\140\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\140\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\140\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\110\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\120\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\130\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\140\\DTS\\Binn\\;C:\\Program Files (x86)\\MKVToolNix;C:\\Program Files\\nodejs\\;C:\\Program Files\\PowerShell\\7\\;C:\\Program Files\\Git\\cmd;C:\\Users\\cvn_v\\.cargo\\bin;C:\\Users\\cvn_v\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Users\\cvn_v\\AppData\\Local\\Programs\\Fiddler;C:\\Program Files\\SQL Operations Studio\\bin;C:\\Program Files\\MongoDB\\Server\\3.4\\bin;D:\\Udvikling\\Kotlin_Compiler\\kotlinc\\bin;D:\\Udvikling\\Go\\bin;C:\\Users\\cvn_v\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\flutter\\bin;D:\\Programmer\\apktool;D:\\Programmer\\uni;C:\\Users\\cvn_v\\.deno\\bin;C:\\Program Files (x86)\\GitHub CLI\\;C:\\Users\\cvn_v\\AppData\\Roaming\\npm;C:\\Users\\cvn_v\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;D:\\Programmer\\cmder",
+    "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JSE;.WSF;.WSH;.MSC",
+    "PLINK_PROTOCOL": "ssh",
+    "POWERSHELL_DISTRIBUTION_CHANNEL": "MSI:Windows 10 Home",
+    "PROCESSOR_ARCHITECTURE": "AMD64",
+    "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 158 Stepping 9, GenuineIntel",
+    "PROCESSOR_LEVEL": "6",
+    "PROCESSOR_REVISION": "9e09",
+    "ProgramData": "C:\\ProgramData",
+    "ProgramFiles": "C:\\Program Files",
+    "ProgramFiles(x86)": "C:\\Program Files (x86)",
+    "ProgramW6432": "C:\\Program Files",
+    "PROMPT": "C\bL\bI\bN\bK\b \b$P$G",
+    "PSModulePath": "C:\\Users\\cvn_v\\Documents\\WindowsPowerShell\\Modules",
+    "PUBLIC": "C:\\Users\\Public",
+    "SVN_SSH": "C:\\\\Program Files\\\\Git\\\\bin\\\\ssh.exe",
+    "SystemDrive": "C:",
+    "SystemRoot": "C:\\WINDOWS",
+    "TEMP": "C:\\Users\\cvn_v\\AppData\\Local\\Temp",
+    "TERM": "cygwin",
+    "time_init": "0",
+    "TMP": "C:\\Users\\cvn_v\\AppData\\Local\\Temp",
+    "USERDOMAIN": "CVN-ASUS-NOTEBO",
+    "USERDOMAIN_ROAMINGPROFILE": "CVN-ASUS-NOTEBO",
+    "USERNAME": "cvn_v",
+    "USERPROFILE": "C:\\Users\\cvn_v",
+    "user_aliases": "D:\\Programmer\\cmder\\config\\user_aliases.cmd",
+    "VBOX_MSI_INSTALL_PATH": "C:\\Program Files\\Oracle\\VirtualBox\\",
+    "verbose_output": "0",
+    "VS140COMNTOOLS": "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\Common7\\Tools\\",
+    "WEBPACK_DEV_SERVER": "true",
+    "windir": "C:\\WINDOWS",
+    "_prog": "node"
+  },
+  "sharedObjects": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+    "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+    "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+    "C:\\Program Files\\Bitdefender Antivirus Free\\atcuf\\264688744324565018\\atcuf64.dll",
+    "C:\\WINDOWS\\System32\\WS2_32.dll",
+    "C:\\WINDOWS\\System32\\RPCRT4.dll",
+    "C:\\WINDOWS\\System32\\PSAPI.DLL",
+    "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+    "C:\\WINDOWS\\System32\\msvcrt.dll",
+    "C:\\WINDOWS\\System32\\sechost.dll",
+    "C:\\WINDOWS\\System32\\USER32.dll",
+    "C:\\WINDOWS\\System32\\win32u.dll",
+    "C:\\WINDOWS\\System32\\GDI32.dll",
+    "C:\\WINDOWS\\System32\\gdi32full.dll",
+    "C:\\WINDOWS\\System32\\msvcp_win.dll",
+    "C:\\WINDOWS\\System32\\ucrtbase.dll",
+    "C:\\WINDOWS\\System32\\CRYPT32.dll",
+    "C:\\WINDOWS\\System32\\bcrypt.dll",
+    "C:\\WINDOWS\\SYSTEM32\\dbghelp.dll",
+    "C:\\WINDOWS\\SYSTEM32\\IPHLPAPI.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\USERENV.dll",
+    "C:\\WINDOWS\\SYSTEM32\\WINMM.dll",
+    "C:\\WINDOWS\\System32\\IMM32.DLL",
+    "D:\\Programmer\\cmder\\vendor\\conemu-maximus5\\ConEmu\\ConEmuHk64.dll",
+    "C:\\WINDOWS\\SYSTEM32\\powrprof.dll",
+    "C:\\WINDOWS\\SYSTEM32\\UMPDC.dll",
+    "C:\\WINDOWS\\SYSTEM32\\CRYPTBASE.DLL",
+    "C:\\WINDOWS\\system32\\uxtheme.dll",
+    "C:\\WINDOWS\\System32\\combase.dll",
+    "C:\\WINDOWS\\system32\\mswsock.dll",
+    "C:\\WINDOWS\\SYSTEM32\\kernel.appcore.dll",
+    "C:\\WINDOWS\\System32\\bcryptprimitives.dll",
+    "C:\\WINDOWS\\System32\\NSI.dll",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc6.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\DNSAPI.dll",
+    "C:\\WINDOWS\\system32\\napinsp.dll",
+    "C:\\WINDOWS\\system32\\pnrpnsp.dll",
+    "C:\\WINDOWS\\system32\\wshbth.dll",
+    "C:\\WINDOWS\\system32\\NLAapi.dll",
+    "C:\\WINDOWS\\System32\\winrnr.dll",
+    "C:\\Windows\\System32\\rasadhlp.dll",
+    "C:\\WINDOWS\\System32\\fwpuclnt.dll"
+  ]
+}

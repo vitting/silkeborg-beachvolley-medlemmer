@@ -1,0 +1,52 @@
+<button
+  color="primary"
+  mat-button
+  (click)="addEditTempVar(null)"
+  class="tempvar-add"
+>
+  <mat-icon>add</mat-icon> Opret en skabelon variable
+</button>
+<div class="tempvar-lines" role="list">
+  <div
+    class="line tempvar-line"
+    *ngFor="let item of tempVars; index as i"
+    role="listitem"
+  >
+    <div class="tempvar-line-buttons">
+      <button
+        mat-icon-button
+        matTooltip="Rediger"
+        class="tempvar-edit"
+        (click)="addEditTempVar(item, i)"
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        matTooltip="Slet"
+        class="tempvar-delete"
+        (click)="deleteTempVar(item, i)"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+    <div class="tempvar-fields">
+      <div class="tempvar-field tempvar-field-name">
+        <div class="tempvar-field-title">Navn</div>
+        <div>{{item.name}}</div>
+      </div>
+      <div class="tempvar-field tempvar-field-value">
+        <div class="tempvar-field-title">Værdi</div>
+        <div>
+          {{item.value}}
+        </div>
+      </div>
+      <div class="tempvar-field tempvar-field-key">
+        <div class="tempvar-field-title">Nøgle</div>
+        <div>
+          {{item.key}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

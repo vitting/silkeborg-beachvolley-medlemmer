@@ -1,0 +1,123 @@
+<h2 mat-dialog-title class="title">
+  <mat-icon>email</mat-icon>
+  <div>
+    <div>{{title}}</div>
+  </div>
+</h2>
+<div mat-dialog-content>
+  <div *ngIf="name && email" class="member-info">
+    <div class="member-info-name">
+      <mat-icon>person</mat-icon> <span>{{name}}</span>
+    </div>
+    <div class="member-info-email">
+      <mat-icon>email</mat-icon> <span>{{email}}</span>
+    </div>
+  </div>
+  <ng-container *ngIf="showEmailTemplates">
+    <mat-form-field>
+      <mat-label>Brug en e-mail skabeloner</mat-label>
+      <mat-select (selectionChange)="emailTemplateChange($event)">
+        <mat-option>
+          Ingen skabelon
+        </mat-option>
+        <mat-option *ngFor="let template of emailTemplates" [value]="template">
+          {{template.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </ng-container>
+  <form
+    [formGroup]="emailForm"
+    (ngSubmit)="onSubmit()"
+    #sendEmailForm="ngForm"
+    class="email-form"
+  >
+    <div class="field">
+      <mat-form-field>
+        <mat-label>Emne</mat-label>
+        <input
+          matInput
+          type="text"
+          required
+          placeholder="Indtast emne"
+          formControlName="subject"
+        />
+        <mat-error *ngIf="emailForm.get('subject').invalid"
+          >Emne skal udfyldes</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div class="editor-field">
+      <angular-editor
+        matInput
+        [config]="editorConfig"
+        placeholder="E-mail indhold"
+        formControlName="body"
+      ></angular-editor>
+      <div
+        class="show-vars-button-container"
+        [@variablesButtonAnim]="showTemplatesVarsButtonState"
+      >
+        <button
+          mat-mini-fab
+          color="primary"
+          matTooltip="Vis variabler"
+          type="button"
+          (click)="showVariables('show')"
+        >
+          <mat-icon>power_input</mat-icon>
+        </button>
+      </div>
+      <div class="variables-popup" [@variablesAnim]="showTemplatesVarsState">
+        <div class="variables">
+          <button
+            mat-icon-button
+            type="button"
+            (click)="showVariables('hide')"
+            matTooltip="Luk"
+          >
+            <mat-icon>highlight_off</mat-icon>
+          </button>
+
+          <div class="var-title">Variabler</div>
+          <div class="var-lines">
+            <div>
+              <span class="var">##name##</span> =
+              <span>navn på medlem/administrator bruger</span>
+            </div>
+            <div>
+              <span class="var">##currentyear##</span> =
+              <span>årstallet for nuværende år ({{currentYear}})</span>
+            </div>
+            <div *ngIf="showVariablesMembers">
+              <div>
+                <span class="var">##payment##</span> =
+                <span>kontingent for nuværrende sæson</span>
+              </div>
+            </div>
+            <div *ngFor="let tempVar of templateVars">
+              <span class="var">##{{tempVar.key}}##</span> =
+              <span>{{tempVar.name}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions class="actions-container">
+  <div class="button-container">
+    <button type="button" mat-raised-button (click)="closeDialog()">
+      Luk
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="button"
+      (click)="submitForm()"
+      [disabled]="!emailForm.valid"
+    >
+      {{buttonTitle}}
+    </button>
+  </div>
+</div>

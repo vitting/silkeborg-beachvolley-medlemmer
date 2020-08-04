@@ -1,0 +1,12 @@
+<h2 mat-dialog-title class="title">
+  <mat-icon>delete</mat-icon> <span>{{data.title}}</span>
+</h2>
+<div mat-dialog-content>
+  <span class="text">
+    {{data.text}}
+  </span>
+</div>
+<div mat-dialog-actions class="button-container">
+  <button mat-raised-button [mat-dialog-close]="false" cdkFocusInitial>Fortryd</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="true">Slet</button>
+</div>

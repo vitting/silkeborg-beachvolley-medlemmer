@@ -1,0 +1,16 @@
+.line {
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color: lightgray;
+  }
+
+  &:first-child {
+    margin-bottom: 10px;
+  }
+
+  .line-buttons {
+    margin-right: 10px;
+  }
+}

@@ -1,0 +1,49 @@
+.tempvar-line {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  &:hover {
+    background-color: lightgray;
+  }
+
+  .tempvar-line-buttons {
+    width: 120px;
+  }
+
+  .tempvar-fields {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .tempvar-field {
+    display: flex;
+    flex-direction: column;
+
+    &.tempvar-field-name {
+      width: 250px;
+    }
+
+    &.tempvar-field-value {
+      width: 350px;
+    }
+
+    .tempvar-field-title {
+      font-weight: 500;
+    }
+  }
+
+  .tempvar-add {
+    margin: 10px 0;
+  }
+
+  .tempvar-delete {
+    margin-left: 10px;
+  }
+
+  .tempvar-active {
+    align-self: center;
+  }
+}

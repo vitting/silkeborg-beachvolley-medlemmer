@@ -1,0 +1,42 @@
+table {
+  width: 100%;
+}
+
+.row-click {
+  cursor: pointer;
+}
+
+tr:hover {
+  background: whitesmoke;
+}
+
+.emails {
+  max-width: 250px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.status_ok, .status_error {
+  color: white;
+  padding: 3px;
+  border-radius: 4px;
+}
+
+.status_ok {
+  background-color: green;
+}
+
+.status_error {
+  background-color: red;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #fff;
+
+  .pagination-spinner {
+    margin: 0 20px;
+  }
+}

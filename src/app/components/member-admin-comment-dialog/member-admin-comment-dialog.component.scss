@@ -1,0 +1,75 @@
+.title {
+  display: flex;
+  align-items: center;
+
+  .mat-icon {
+    margin-right: 5px;
+  }
+}
+
+.button-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.comment-edit {
+  display: flex;
+  align-items: center;
+  .mat-form-field {
+    width: 100%;
+  }
+
+
+  .comment-edit-buttons {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.comment-list {
+  margin-top: 5px;
+  mat-card {
+    margin-bottom: 3px;
+  }
+}
+.comment {
+  .user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9em;
+    font-weight: 500;
+    position: relative;
+
+    .popupMenu {
+      position: absolute;
+      right: 0;
+      top: 40px;
+
+      button {
+        margin-right: 10px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .text {
+    padding-bottom: 5px;
+  }
+
+  .edit-delete-buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .delete-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px 0;
+  }
+}

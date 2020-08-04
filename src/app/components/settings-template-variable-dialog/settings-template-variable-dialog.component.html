@@ -1,0 +1,61 @@
+<h2 mat-dialog-title class="title">
+  <mat-icon>group</mat-icon>
+  <div>{{title}}</div>
+</h2>
+<div mat-dialog-content>
+  <div class="content">
+    <form
+      [formGroup]="tempVarForm"
+      (ngSubmit)="onSubmit()"
+      #tempVarLineForm="ngForm"
+    >
+      <div class="field">
+        <mat-form-field class="form-field">
+          <mat-label>Nøgle</mat-label>
+          <input
+            matInput
+            required
+            formControlName="key"
+            (keydown)="validateKeyPress($event)"
+          />
+          <mat-hint>{{keyHint}}</mat-hint>
+          <mat-error *ngIf="tempVarForm.get('key').invalid"
+            >{{getError(tempVarForm.get('key'))}}</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="field">
+        <mat-form-field class="form-field">
+          <mat-label>Navn</mat-label>
+          <input matInput required formControlName="name" />
+          <mat-error *ngIf="tempVarForm.get('name').invalid"
+            >{{getError(tempVarForm.get('name'))}}</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="field">
+        <mat-form-field class="form-field">
+          <mat-label>Værdi</mat-label>
+          <input matInput required formControlName="value" />
+          <mat-error *ngIf="tempVarForm.get('value').invalid"
+            >{{getError(tempVarForm.get('value'))}}</mat-error
+          >
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+</div>
+<div mat-dialog-actions class="button-container">
+  <button type="button" mat-raised-button (click)="closeDialog()">
+    Luk
+  </button>
+  <button
+    mat-raised-button
+    color="primary"
+    type="button"
+    (click)="submitForm()"
+    [disabled]="!tempVarForm.valid"
+  >
+    {{buttonTitle}}
+  </button>
+</div>

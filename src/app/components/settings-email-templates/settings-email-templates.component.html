@@ -1,0 +1,17 @@
+<button
+  color="primary"
+  mat-button
+  (click)="showEmailTemaplteAddEditDialog(null)"
+  class="emailtemplate-add"
+>
+  <mat-icon>add</mat-icon> Tilføj en e-mail skabelon
+</button>
+<ng-container *ngFor="let template of emailTemplates; index as i">
+  <app-settings-email-templates-item
+    [emailTemplate]="template"
+    (editEmailTextClick)="editEmailText($event)"
+    (showEmailTextClick)="showEmailText($event)"
+    (editTemplateClick)="showEmailTemaplteAddEditDialog($event)"
+    (deleteTemplateClick)="deleteTemplate($event, i)"
+  ></app-settings-email-templates-item>
+</ng-container>

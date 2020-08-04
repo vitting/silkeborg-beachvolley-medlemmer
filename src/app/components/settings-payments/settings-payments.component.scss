@@ -1,0 +1,41 @@
+.payment-line {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color: lightgray;
+  }
+
+  .payment-line-buttons {
+    width: 120px;
+  }
+
+  .payment-fields {
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .payment-field {
+    display: flex;
+    flex-direction: column;
+
+    .payment-field-title {
+      font-weight: 500;
+    }
+  }
+
+  .payment-field-team {
+    width: 160px;
+  }
+
+  .payment-add {
+    margin: 10px 0;
+  }
+
+  .payment-delete {
+    margin-left: 10px;
+  }
+}

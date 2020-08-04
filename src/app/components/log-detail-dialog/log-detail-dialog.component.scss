@@ -1,0 +1,33 @@
+.title {
+  display: flex;
+  align-items: center;
+
+  .mat-icon {
+    margin-right: 5px;
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.element {
+  border-bottom: 1px solid lightgray;
+  padding: 5px 0;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.label {
+  font-weight: 500;
+  margin-right: 5px;
+}

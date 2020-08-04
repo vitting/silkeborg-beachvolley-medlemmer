@@ -1,0 +1,48 @@
+<button color="primary" mat-button (click)="addEditTeam(null)" class="team-add">
+  <mat-icon>add</mat-icon> Opret et hold
+</button>
+<div class="team-lines" role="list">
+  <div
+    class="line team-line"
+    *ngFor="let team of teams; index as i"
+    role="listitem"
+  >
+    <div class="team-line-buttons">
+      <button
+        mat-icon-button
+        matTooltip="Rediger"
+        class="team-edit"
+        [disabled]="team.value==='default'"
+        (click)="addEditTeam(team, i)"
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        matTooltip="Slet"
+        class="team-delete"
+        [disabled]="team.value==='default'"
+        (click)="deleteTeam(team, i)"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+    <div class="team-fields">
+      <div class="team-field team-field-team">
+        <div class="team-field-title">Hold</div>
+        <div>{{team.name}}</div>
+      </div>
+      <div class="team-field">
+        <div class="team-field-title">Aktivt hold</div>
+        <div class="team-active">
+          <mat-slide-toggle
+            color="primary"
+            [disabled]="true"
+            [checked]="team.active"
+            [matTooltip]="team.active ? 'Atkiv' : 'Ikke aktiv'"
+          ></mat-slide-toggle>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

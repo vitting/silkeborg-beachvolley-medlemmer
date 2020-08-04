@@ -1,0 +1,58 @@
+.container {
+  margin: 10px;
+
+  .top-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+  }
+  .list {
+    .listitem {
+      margin-bottom: 5px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .info {
+
+        .email {
+          font-size: 0.9em;
+          line-height: 1.5em;
+          font-weight: normal;
+        }
+      }
+
+      .properties {
+        display: flex;
+        align-items: center;
+        .date, .admin-user {
+          display: flex;
+          align-items: center;
+
+          .mat-icon {
+            margin-right: 5px;
+          }
+        }
+
+        .admin-user {
+          margin-left: 20px;
+        }
+      }
+
+
+      .button-container {
+        display: flex;
+        justify-content: flex-end;
+
+        button {
+          margin-right: 20px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,90 @@
+.content {
+  overflow-x: auto;
+  height: 100%;
+
+  .top-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .member-filter {
+      flex: 2;
+      .mat-form-field {
+        margin-left: 10px;
+        font-size: 14px;
+        width: 100%;
+      }
+    }
+
+    .active-filter-button:after {
+      position: absolute;
+      top: 3px;
+      left: 13px;
+      content: "";
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: red;
+    }
+  }
+
+
+
+  table {
+    width: 100%;
+  }
+
+  .cell-spacer {
+    margin: 0 5px;
+  }
+
+  .payment-cell {
+    width: 60px;
+  }
+
+  .team-name-cell-container {
+    margin-bottom: 1px;
+  }
+
+  .current-payment-cell-container {
+    margin-top: 1px;
+  }
+
+  .team-name-cell, .current-payment-cell {
+    background-color: darkred;
+    padding: 1px 2px;
+    border-radius: 4px;
+    color: white;
+  }
+
+  .row-click {
+    cursor: pointer;
+  }
+
+  .row-new-last-visit {
+    background-color: lightyellow;
+  }
+
+  tr:hover {
+    background: whitesmoke;
+  }
+
+  .align-center {
+    text-align: center;
+  }
+
+  .cell_icon {
+    font-size: 1.2em;
+  }
+
+  .menu-container {
+    .mat-icon {
+      transform: scale(0.8);
+    }
+    button:last-child {
+      margin-left: 5px;
+    }
+  }
+}

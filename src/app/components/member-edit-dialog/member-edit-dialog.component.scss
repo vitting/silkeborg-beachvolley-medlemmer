@@ -1,0 +1,58 @@
+.title {
+  display: flex;
+  align-items: center;
+
+  .mat-icon {
+    margin-right: 5px;
+  }
+}
+
+.content {
+  .form-field {
+    width: 100%;
+    font-weight: 500;
+  }
+
+  .birthday-title {
+    font-weight: 500;
+    opacity: 0.7;
+  }
+
+  .birthday-container {
+    .select-form-field {
+      width: 85px;
+      font-weight: 500;
+      margin-right: 10px;
+    }
+
+    .select-form-field-small {
+      width: 60px;
+    }
+
+    .select-form-field-big {
+      width: 95px;
+    }
+
+    .select-form-field:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .send-email {
+    margin: 10px 0 30px 0;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.team-not-active::after {
+  content: "ikke aktivt";
+  padding: 3px;
+  border-radius: 4px;
+  background-color: darkred;
+  margin-left: 5px;
+  color: white;
+}

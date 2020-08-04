@@ -1,0 +1,84 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Formular besked til nyoprettet medlem</mat-card-title>
+      <mat-card-subtitle
+        >Besked der vises til medlem efter fuldførelse af indmeldelsesformular.</mat-card-subtitle
+      >
+    </mat-card-header>
+    <mat-card-content>
+      <app-settings-member-message class="line"></app-settings-member-message>
+    </mat-card-content>
+  </mat-card>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Hold</mat-card-title>
+      <mat-card-subtitle
+        >Standard holdet bliver ikke vist i indmeldelsen. Hvis der oprettes
+        yderligere hold vil de hvis de er aktive blive vist.</mat-card-subtitle
+      >
+    </mat-card-header>
+    <mat-card-content>
+      <app-settings-teams [teams]="teams" class="line"></app-settings-teams>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Kontingent</mat-card-title>
+      <mat-card-subtitle
+        >Der skal være oprettet et kontingents år for Standard + andre aktive
+        hold i nuværrende år.</mat-card-subtitle
+      >
+    </mat-card-header>
+    <mat-card-content>
+      <app-settings-payments
+        [paymentLines]="paymentLines"
+        [teams]="teams"
+        class="line"
+      ></app-settings-payments>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Skabelon variabler</mat-card-title>
+      <mat-card-subtitle
+        >Skabelon variabler er værdier der automatisk kan indsættes i en e-mail
+        skabelon.</mat-card-subtitle
+      >
+    </mat-card-header>
+    <mat-card-content>
+      <app-settings-email-template-variables
+        [tempVars]="tempVars"
+      ></app-settings-email-template-variables>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>E-mail skabeloner</mat-card-title>
+      <mat-card-subtitle
+        >En e-mail skabelon kan bruges til at sende prædefineret beskeder til
+        medlemmer. De e-mail skabeloner der ikke kan slettes bruges til forud
+        defineret opgaver.</mat-card-subtitle
+      >
+    </mat-card-header>
+    <mat-card-content>
+      <app-settings-email-templates></app-settings-email-templates>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card *ngIf="isAdmin">
+    <mat-card-header>
+      <mat-card-title>Firebase functions miljø variabler</mat-card-title>
+      <mat-card-subtitle
+        >Meget nørdet. Er de værdier der bliver brugt på serveren til bla. udsendelse
+        af e-mails.</mat-card-subtitle
+      >
+    </mat-card-header>
+    <mat-card-content>
+      <app-settings-environment-vars></app-settings-environment-vars>
+    </mat-card-content>
+  </mat-card>
+</div>

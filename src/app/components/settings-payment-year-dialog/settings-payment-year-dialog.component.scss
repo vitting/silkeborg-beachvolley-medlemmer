@@ -1,0 +1,40 @@
+.title {
+  display: flex;
+  align-items: center;
+
+
+  .mat-icon {
+    margin-right: 5px;
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.content {
+  margin: 20px 0;
+  .year-amount {
+    display: flex;
+    align-items: center;
+  }
+
+  .form-field-teams {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .form-field-year, .form-field-amount {
+    width: 80px;
+
+    input {
+      text-align: center;
+    }
+  }
+
+  .spacer {
+    margin: 0 20px;
+  }
+}

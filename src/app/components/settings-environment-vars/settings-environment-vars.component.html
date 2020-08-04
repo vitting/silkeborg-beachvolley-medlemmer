@@ -1,0 +1,123 @@
+<button color="primary" mat-button (click)="getEnvironmentVarsForFunctions()">
+  <mat-icon>build</mat-icon> Hent og vis miljø variabler
+</button>
+<div class="environment_functions" *ngIf="environmentVarsForFunctions">
+  <h2>Udvikler variabler</h2>
+  <div class="dev-vars-container">
+    <div class="env-line">
+      <span class="env-title">Udvikler tilstand:</span
+      ><span class="env-value"
+        ><mat-slide-toggle
+          color="primary"
+          [disabled]="true"
+          [checked]="environmentVarsForFunctions.development"
+        ></mat-slide-toggle
+      ></span>
+    </div>
+    <div
+      class="env-dev-warning"
+      *ngIf="environmentVarsForFunctions.development"
+    >
+      Medlems administration kører i udvikler tilstand. Alle e-mails der
+      sendes i øjeblikket vil blive sendt til
+      <span class="env-dev-warning-email"
+        >{{environmentVarsForFunctions.devSendToEmail}}</span
+      >
+    </div>
+    <div class="env-line">
+      <span class="env-title">NodemailerApp udvikler tilstand:</span
+      ><span class="env-value"
+        ><mat-slide-toggle
+          color="primary"
+          [disabled]="true"
+          [checked]="environmentVarsForFunctions.devLocal"
+        ></mat-slide-toggle
+      ></span>
+    </div>
+    <div
+      class="env-dev-warning"
+      *ngIf="environmentVarsForFunctions.devLocal && environmentVarsForFunctions.development"
+    >
+      Medlems administration kører i lokal NodemailerApp udvikler tilstand.
+      Alle e-mails der sendes i øjeblikket vil blive sendt til lokal
+      installeret NodemailerApp.
+    </div>
+    <div class="env-line">
+      <span class="env-title">E-mail sendes til i udvikler tilstand:</span
+      ><span class="env-value"
+        >{{environmentVarsForFunctions.devSendToEmail}}</span
+      >
+    </div>
+    <div class="env-line">
+      <span class="env-title">Send e-mail fra navn:</span
+      ><span class="env-value"
+        >{{environmentVarsForFunctions.devFromName}}</span
+      >
+    </div>
+    <div class="env-line">
+      <span class="env-title">Send e-mail fra adresse:</span
+      ><span class="env-value"
+        >{{environmentVarsForFunctions.devFromEmail}}</span
+      >
+    </div>
+    <div class="env-line">
+      <span class="env-title">Send fra Gmail konto adresse:</span
+      ><span class="env-value"
+        >{{environmentVarsForFunctions.devAccountEmail}}</span
+      >
+    </div>
+    <div class="env-line">
+      <span class="env-title">Send fra Gmail konto kodeord:</span
+      ><span class="env-value">xxxxxxxxxxx</span>
+    </div>
+    <div class="env-line">
+      <span class="env-title">NodemailerApp host:</span
+      ><span class="env-value"
+        >{{environmentVarsForFunctions.devLocalHost}}</span
+      >
+    </div>
+    <div class="env-line">
+      <span class="env-title">NodemailerApp port:</span
+      ><span class="env-value"
+        >{{environmentVarsForFunctions.devLocalPort}}</span
+      >
+    </div>
+    <div class="env-line">
+      <span class="env-title">NodemailerApp username:</span
+      ><span class="env-value"
+        >{{environmentVarsForFunctions.devLocalUsername}}</span
+      >
+    </div>
+    <div class="env-line">
+      <span class="env-title">NodemailerApp password:</span
+      ><span class="env-value"
+        >{{environmentVarsForFunctions.devLocalPassword}}</span
+      >
+    </div>
+  </div>
+  <h2>Produktions variabler</h2>
+  <div class="prod-vars-container">
+    <div class="env-line">
+      <span class="env-title">Send e-mail fra navn:</span
+      ><span class="env-value"
+        >{{environmentVarsForFunctions.prodFromName}}</span
+      >
+    </div>
+    <div class="env-line">
+      <span class="env-title">Send e-mail fra adresse:</span
+      ><span class="env-value"
+        >{{environmentVarsForFunctions.prodFromEmail}}</span
+      >
+    </div>
+    <div class="env-line">
+      <span class="env-title">Send fra Gmail konto adresse:</span
+      ><span class="env-value"
+        >{{environmentVarsForFunctions.prodAccountEmail}}</span
+      >
+    </div>
+    <div class="env-line">
+      <span class="env-title">Send fra Gmail konto kodeord:</span
+      ><span class="env-value">xxxxxxxxxxx</span>
+    </div>
+  </div>
+</div>

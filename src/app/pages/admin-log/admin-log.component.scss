@@ -1,0 +1,22 @@
+table {
+  width: 100%;
+}
+
+.row-click {
+  cursor: pointer;
+}
+
+tr:hover {
+  background: whitesmoke;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #fff;
+
+  .pagination-spinner {
+    margin: 0 20px;
+  }
+}
